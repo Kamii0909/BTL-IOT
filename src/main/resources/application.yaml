@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:database/greenhouse.db
+    hikari:
+      auto-commit: false
+      minimum-idle: 1
+      maximum-pool-size: 1
+  jpa:
+    # generate-ddl: true
+    hibernate:
+      # ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+    # show-sql: true
+    properties:
+      hibernate:
+        "[current_session_context_class]": org.springframework.orm.hibernate5.SpringSessionContext
+  task:
+    scheduling:
+      pool:
+        size: 1   
+logging:
+  level:
+    org:
+      springframework:
+      # transaction: trace
+  file:
+    name: log/app.log
+server:
+  port: 8080
+  servlet:
+    context-path: /

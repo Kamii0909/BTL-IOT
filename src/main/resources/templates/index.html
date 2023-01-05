@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Manager</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+    <div id="app">
+        <p>{{ message }}</p>
+        <div>Count: {{ counter }}</div>
+        <button v-on:click="increase()">Click me</button>
+        <div class="box" v-on:mousemove="handleMouseMove">
+            <p>Mouse position X: {{ clientX }}</p>
+            <p>Moust position Y: {{ clientY }}</p>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
