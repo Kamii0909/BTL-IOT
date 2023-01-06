@@ -1,4 +1,4 @@
-package hust.iot.kien.restapi;
+package hust.iot.kien.restapi.repository;
 
 import java.util.List;
 import org.springframework.data.domain.Pageable;

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import hust.iot.kien.restapi.SensorDataRepository;
 import hust.iot.kien.restapi.model.SensorData;
+import hust.iot.kien.restapi.repository.SensorDataRepository;
 
 @RestController
 @RequestMapping("/api")

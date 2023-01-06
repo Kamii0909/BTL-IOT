@@ -490,3 +490,30 @@ java.util.concurrent.TimeoutException: null
 2023-01-06T01:23:06.708+07:00  INFO 13204 --- [scheduling-1] hust.iot.kien.restapi.DataFetcher        : Skipping duplicate message at 2023-01-06T22:28:01.483...
 2023-01-06T01:23:17.882+07:00  INFO 13204 --- [scheduling-1] hust.iot.kien.restapi.DataFetcher        : Skipping duplicate message at 2023-01-06T22:28:01.483...
 2023-01-06T01:23:29.103+07:00  INFO 13204 --- [scheduling-1] hust.iot.kien.restapi.DataFetcher        : Skipping duplicate message at 2023-01-06T22:28:01.483...
+2023-01-06T01:40:25.257+07:00  INFO 11512 --- [main] h.iot.kien.restapi.RestApiApplication    : Starting RestApiApplication using Java 19.0.1 with PID 11512 (D:\Studying\Code\Java\File\IoT\rest-api\target\classes started by admin in D:\Studying\Code\Java\File\IoT\rest-api)
+2023-01-06T01:40:25.259+07:00  INFO 11512 --- [main] h.iot.kien.restapi.RestApiApplication    : The following 1 profile is active: "dev"
+2023-01-06T01:40:25.310+07:00  WARN 11512 --- [main] o.s.c.annotation.AnnotationTypeMapping   : Support for convention-based annotation attribute overrides is deprecated and will be removed in Spring Framework 6.1. Please annotate the following attributes in @org.springframework.retry.annotation.EnableRetry with appropriate @AliasFor declarations: [proxyTargetClass]
+2023-01-06T01:40:25.763+07:00  INFO 11512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-06T01:40:25.811+07:00  INFO 11512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interfaces.
+2023-01-06T01:40:26.678+07:00  INFO 11512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-01-06T01:40:26.690+07:00  INFO 11512 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-06T01:40:26.691+07:00  INFO 11512 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-06T01:40:26.788+07:00  INFO 11512 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-06T01:40:26.789+07:00  INFO 11512 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1463 ms
+2023-01-06T01:40:26.924+07:00  INFO 11512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-06T01:40:27.055+07:00  INFO 11512 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3e377967
+2023-01-06T01:40:27.058+07:00  INFO 11512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-06T01:40:27.120+07:00  INFO 11512 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-06T01:40:27.163+07:00  INFO 11512 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-06T01:40:27.296+07:00  WARN 11512 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-06T01:40:27.424+07:00  INFO 11512 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.community.dialect.SQLiteDialect
+2023-01-06T01:40:28.013+07:00  INFO 11512 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-06T01:40:28.020+07:00  INFO 11512 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-06T01:40:28.539+07:00  WARN 11512 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-06T01:40:28.826+07:00  INFO 11512 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-01-06T01:40:29.167+07:00  INFO 11512 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-01-06T01:40:29.182+07:00  INFO 11512 --- [main] h.iot.kien.restapi.RestApiApplication    : Started RestApiApplication in 4.407 seconds (process running for 4.752)
+2023-01-06T01:40:30.548+07:00  INFO 11512 --- [scheduling-1] hust.iot.kien.restapi.DataFetcher        : Skipping duplicate message at 2023-01-06T22:28:01.483...
+2023-01-06T01:40:41.035+07:00  INFO 11512 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-06T01:40:41.036+07:00  INFO 11512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-06T01:40:41.038+07:00  INFO 11512 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

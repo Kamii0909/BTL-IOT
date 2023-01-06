@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Random;
 import org.springframework.boot.CommandLineRunner;
 import hust.iot.kien.restapi.model.SensorData;
+import hust.iot.kien.restapi.repository.SensorDataRepository;
 // import org.springframework.stereotype.Component;
 import lombok.extern.slf4j.Slf4j;
 

@@ -16,6 +16,7 @@ import com.hivemq.client.mqtt.MqttGlobalPublishFilter;
 import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient;
 import com.hivemq.client.mqtt.mqtt5.Mqtt5BlockingClient.Mqtt5Publishes;
 import hust.iot.kien.restapi.model.SensorData;
+import hust.iot.kien.restapi.repository.SensorDataRepository;
 import com.hivemq.client.mqtt.mqtt5.Mqtt5Client;
 import lombok.extern.slf4j.Slf4j;
 
@@ -82,15 +83,6 @@ public class DataFetcher {
                     \t Fetched time: {}
                     \t Latest local time: {}
                         """, newTime, oldTime);
-            }
-
-
-            if (newTime.isAfter(oldTime)) {
-
-            } else if (newTime.isEqual(oldTime)) {
-
-            } else {
-
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
