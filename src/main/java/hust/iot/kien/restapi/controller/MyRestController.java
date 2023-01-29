@@ -22,6 +22,6 @@ public class MyRestController {
 
     @GetMapping("/{fetchAmount}")
     public ResponseEntity<List<SensorData>> fetch(@PathVariable("fetchAmount") int fetchAmount) {
-        return ResponseEntity.ok().body(sensorDataRepository.fetch(PageRequest.of(0, fetchAmount)));
+        return ResponseEntity.ok().body(sensorDataRepository.fetchAll(PageRequest.of(0, fetchAmount)));
     }
 }

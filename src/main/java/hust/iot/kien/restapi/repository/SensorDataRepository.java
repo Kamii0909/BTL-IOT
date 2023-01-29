@@ -4,9 +4,14 @@ import java.util.List;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import hust.iot.kien.restapi.model.Device;
 import hust.iot.kien.restapi.model.SensorData;
 
 public interface SensorDataRepository extends JpaRepository<SensorData, Long> {
+    @Query("from SensorData s where s.device = :device order by s.timeAdded desc ")
+    List<SensorData> fetch(@Param("device") Device device, Pageable pageable);
+
     @Query("from SensorData s order by s.timeAdded desc")
-    List<SensorData> fetch(Pageable pageable);
+    List<SensorData> fetchAll(Pageable pageable);
 }

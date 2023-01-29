@@ -66,7 +66,7 @@ public class DataFetcher {
                 .getPayloadAsBytes();
 
             SensorData sensorData = objectMapper.readValue(payload, SensorData.class);
-            SensorData latest = sensorDataRepository.fetch(PageRequest.ofSize(1)).get(0);
+            SensorData latest = sensorDataRepository.fetchAll(PageRequest.ofSize(1)).get(0);
 
             LocalDateTime newTime = sensorData.getTimeAdded();
             LocalDateTime oldTime = latest.getTimeAdded();

@@ -31,6 +31,6 @@ logging:
   file:
     name: log/app.log
 server:
-  port: 8080
+  port: 8082
   servlet:
     context-path: /

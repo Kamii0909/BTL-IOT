@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableScheduling
-@EnableRetry
+@EnableRetry(proxyTargetClass = false)
 public class RestApiApplication {
 
 	public static void main(String[] args) {
