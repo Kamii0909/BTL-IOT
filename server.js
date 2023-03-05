@@ -24,7 +24,6 @@ server.use('/devices', deviceRouter);
 server.use(express.static('public'));
 
 //connect db mongo atlas
-// const url = "mongodb+srv://hanh-nh_18:123321@cluster0.iabfh.mongodb.net/IoTDB?retryWrites=true&w=majority"
 const uri = 'mongodb+srv://iot:iot@iot-hust-2022.l4h0bw8.mongodb.net/';
 const connect = mongoose.connect(uri, { dbName: 'IOT', useNewUrlParser: true, useUnifiedTopology: true });
 connect.then(() => {
@@ -37,6 +36,6 @@ connect.then(() => {
 const http = require('http').createServer(server);
 
 http.mqttClient = mqttClient;
-http.listen(3000);
+http.listen(2411);
 
-console.log("Listen at port 3000");
+console.log("Listen at port 2411");

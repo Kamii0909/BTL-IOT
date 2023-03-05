@@ -3,7 +3,7 @@ info:
   description: The document of IoT project
   version: 1.0.0
   title: IoT REST APIs
-host: 'localhost:3000'
+host: 'localhost:2411'
 
 paths:
   /users/login:

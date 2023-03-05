@@ -4,10 +4,8 @@ const Device = require("../model/device");
 class MqttHandler {
     constructor() {
         this.mqttClient = null;
-        this.host = 'tcp://broker.hivemq.com';
-        this.subscribeTopic = "nhom10iot/data";
-        // this.username = '';
-        // this.password = '';
+        this.host = 'tcp://test.mosquitto.org/';
+        this.subscribeTopic = "hust/iot/data";
     }
 
     connect() {
@@ -33,7 +31,7 @@ class MqttHandler {
 
         this.mqttClient.on('message', async (subscribeTopic, payload) => {
             try {
-                var jsonMessage = JSON.parse(payload.toString());
+                let jsonMessage = JSON.parse(payload.toString());
                 console.log("jsonMessage: ", jsonMessage);
 
                 let device = await Device.findOne({embedId: jsonMessage.embedId});
