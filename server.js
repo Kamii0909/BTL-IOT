@@ -6,9 +6,21 @@ const passportLocal = require("passport-local").Strategy;
 const expressSession = require("express-session");
 const Device = require('./app/model/device');
 const User = require('./app/model/user');
-var mqttClient = require('./app/mqttWrapper/mqttClient');
+let mqttClient = require('./app/mqttWrapper/mqttClient');
+
+const swaggerUi = require('swagger-ui-express');
+const fs = require("fs")
+const YAML = require('yaml')
+
+const file  = fs.readFileSync('./api.yaml', 'utf8')
+const swaggerDocument = YAML.parse(file)
+
 
 const server = express().use(express.json()).use(express.urlencoded({ extended: true })).use(cors());
+
+server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
 
 server.use(expressSession({ secret: "secret" }))
 server.use(passport.initialize());
