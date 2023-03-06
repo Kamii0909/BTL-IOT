@@ -4,12 +4,12 @@ const Device = require("../model/device");
 class MqttHandler {
     constructor() {
         this.mqttClient = null;
-        this.host = 'tcp://test.mosquitto.org/';
+        this.host = 'tcp://broker.hivemq.com';
         this.subscribeTopic = "hust/iot/data";
     }
 
     connect() {
-        this.mqttClient = mqtt.connect(this.host, {port: 1883});
+        this.mqttClient = mqtt.connect(this.host, { port: 1883 });
         // Mqtt error calback
         this.mqttClient.on('error', (err) => {
             console.log(err);
@@ -29,25 +29,24 @@ class MqttHandler {
             console.log(`mqtt client disconnected`);
         });
 
-        this.mqttClient.on('message', async (subscribeTopic, payload) => {
+        this.mqttClient.on('message', async (_subscribeTopic, payload) => {
             try {
                 let jsonMessage = JSON.parse(payload.toString());
                 console.log("jsonMessage: ", jsonMessage);
 
-                let device = await Device.findOne({embedId: jsonMessage.embedId});
+                let device = await Device.findOne({ embedId: jsonMessage.embedId });
                 if (device) {
-                    device.connectState = jsonMessage.connectState;
+                    device.connectState = "ON";
 
-                    if (jsonMessage.connectState === "ON") {
-                        device.location = jsonMessage.location;
-                        device.stateHistory.push({
-                            at: jsonMessage.at,
-                            temperature: jsonMessage.temperature,
-                            humidity: jsonMessage.humidity,
-                            co2: jsonMessage.co2,
-                            dust: jsonMessage.dust
-                        })
-                    }
+                    device.stateHistory = (typeof device.stateHistory != 'undefined' && device.stateHistory instanceof Array) ? device.stateHistory : [];
+
+                    device.stateHistory.push({
+                        at: Date.now(),
+                        temperature: jsonMessage.temperature,
+                        humidity: jsonMessage.humidity,
+                        co2: Math.floor(Math.random() * 20),
+                        dust: Math.floor(Math.random() * 70)
+                    })
 
                     await Device.findByIdAndUpdate(device._id, {
                         $set: device

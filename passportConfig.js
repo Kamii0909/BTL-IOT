@@ -52,7 +52,7 @@ module.exports = function (passport) {
     cb(null, user.id);
   });
   passport.deserializeUser(async (id, done) => {
-    const user = await User.findById(id);
+    const user = User.findById(id);
     console.log("ok")
     done(null, user);
   });
